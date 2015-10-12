@@ -13,4 +13,5 @@
 	<context:property-placeholder location="classpath:tomongo.properties" ignore-unresolvable="true" />
 	<import resource="dataprep-context.xml" />
 
+     <bean id="mongoDB" class="org.brodner.alfresco.tomongo.MongoDB"/>
 </beans>

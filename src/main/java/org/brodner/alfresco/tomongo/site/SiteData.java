@@ -1,4 +1,4 @@
-package org.brodner.alfresco.tomongo.base;
+package org.brodner.alfresco.tomongo.site;
 
 import org.alfresco.bm.data.DataCreationState;
 import org.bson.Document;
