@@ -1,8 +1,7 @@
-package org.brodner.alfresco.tomongo.scripts;
+package org.brodner.alfresco.tomongo;
 
 import org.alfresco.dataprep.SiteService;
-import org.brodner.alfresco.tomongo.MongoDB;
-import org.brodner.alfresco.tomongo.RunnerContext;
+import org.brodner.alfresco.tomongo.scripts.SiteOperationOnUser;
 
 public class Runner extends RunnerContext {
 
