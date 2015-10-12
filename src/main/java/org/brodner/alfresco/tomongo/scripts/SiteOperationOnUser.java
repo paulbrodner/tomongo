@@ -17,24 +17,22 @@ import com.mongodb.client.MongoDatabase;
 public class SiteOperationOnUser extends RunnerContext {
 
 	public static void createSitesInMongoDBFromUsers(
-			String[] userNameAndPassword, SiteService siteService,
+			String[] userNameAndPassword, 
+			SiteService siteService,
 			MongoDB mongoDB) throws Exception {
 
-		List<JSONObject> sites = siteService.getSitesForUser(
-				userNameAndPassword[0], userNameAndPassword[1]);
+		// get all sites for this user
+		List<JSONObject> sites = siteService.getSitesForUser(userNameAndPassword[0], userNameAndPassword[1]);
 
 		MongoClient mongoClient = mongoDB.getClient();
-		MongoDatabase db = mongoClient
-				.getDatabase(mongoDB.mongoDBDatabaseValue);
+		MongoDatabase db = mongoClient.getDatabase(mongoDB.mongoDBDatabaseValue);
 
-		MongoCollection<Document> c = db
-				.getCollection(mongoDB.mongoDBCollectionValue);
-		for (Iterator<JSONObject> iterator = sites.iterator(); iterator
-				.hasNext();) {
+		MongoCollection<Document> c = db.getCollection(mongoDB.mongoDBCollectionValue);
+
+		for (Iterator<JSONObject> iterator = sites.iterator(); iterator.hasNext();) {
 			SiteData siteData = new SiteData((JSONObject) iterator.next());
 			siteData.addToMongoCollection(c);
 		}
 		mongoClient.close();
 	}
-
 }

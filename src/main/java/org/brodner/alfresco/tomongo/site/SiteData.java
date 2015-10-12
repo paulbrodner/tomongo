@@ -22,8 +22,11 @@ public class SiteData extends org.alfresco.bm.site.SiteData {
 
 	public Document toDocument() {
 		return new Document()
-				.append(FIELD_GUID, getGuid()).append(FIELD_DOMAIN, getDomain())
-				.append(FIELD_PATH, getPath()).append(FIELD_PRESET, "preset")
+				.append(FIELD_SITE_ID, getTitle())
+				.append(FIELD_GUID, getGuid())
+				.append(FIELD_DOMAIN, getDomain())
+				.append(FIELD_PATH, getPath())
+				.append(FIELD_PRESET, "preset")
 				.append(FIELD_TITLE, getTitle())
 				.append(FIELD_DESC, getDescription())
 				.append(FIELD_VISIBILITY, getVisibility())

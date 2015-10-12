@@ -18,10 +18,7 @@ public class MongoDB {
 
 	@Bean
 	public MongoClient getClient() {
-		MongoClient mongoClient = new MongoClient(
-				env.getProperty("mongodb.url"), Integer.valueOf(env
-						.getProperty("mongodb.port")));
-
+		MongoClient mongoClient = new MongoClient(env.getProperty("mongodb.url"), Integer.valueOf(env.getProperty("mongodb.port")));
 		return mongoClient;
 	}
 
@@ -31,5 +28,4 @@ public class MongoDB {
 
 	@Value("${mongodb.database}")
 	public String mongoDBDatabaseValue;
-
 }
