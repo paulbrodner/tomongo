@@ -1,9 +1,9 @@
-package org.brodner.alfresco.tomongo;
+package org.brodner.alfresco.tomongo.base;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class App {
+public class ToMongoApp {
 	private static ApplicationContext context;
 
 	public static ApplicationContext getContext() {
