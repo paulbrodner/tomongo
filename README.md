@@ -37,3 +37,6 @@ _Example:_
     }
     ```
 
+Alfresco Rest API
+
+* RESTful-Repository: http://docs.alfresco.com/5.0/references/RESTful-Repository.html?m=2

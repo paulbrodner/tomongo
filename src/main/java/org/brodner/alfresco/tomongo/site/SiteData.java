@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 
 import com.mongodb.client.MongoCollection;
 
-public class SiteData extends org.alfresco.bm.site.SiteData {
+public class SiteData extends org.alfresco.bm.site.SiteData implements ToMongoData{
 
 	private static final long serialVersionUID = 9068012092479061566L;
 
@@ -20,6 +20,7 @@ public class SiteData extends org.alfresco.bm.site.SiteData {
 		setVisibility(jsonObject.get("visibility").toString());
 	}
 
+	@Override
 	public Document toDocument() {
 		return new Document()
 				.append(FIELD_SITE_ID, getTitle())
@@ -34,8 +35,9 @@ public class SiteData extends org.alfresco.bm.site.SiteData {
 				.append(FIELD_CREATION_STATE, DataCreationState.Created.toString());
 	}
 
+	@Override
 	public void addToMongoCollection(MongoCollection<Document> collection) {
-		System.out.println("Writting:" + getTitle());
+		//System.out.println("Writting:" + getTitle());
 		collection.insertOne(toDocument());
 	}
 }
